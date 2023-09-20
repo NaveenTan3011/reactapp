@@ -1,6 +1,6 @@
 import React from 'react'
 import about_images from "../img/dog.jpg"
-import Button from "./Button"
+import Button from "./MainButton"
 import { Container, Row, Col } from 'react-bootstrap'
 
 const AboutBanner = () => {
