@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 
-const Layout = ({ children, count,  }) => {
+const Layout = ({ children, count}) => {
   return (
     <div>
       <Navbar count={count}  />

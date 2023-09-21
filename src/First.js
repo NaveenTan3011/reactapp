@@ -10,7 +10,6 @@ import Cart from './components/Cart';
 import Shopping from './pageComponents/Shopping';
 
 const First = () => {
- 
   return (
     <>
     <Routes>

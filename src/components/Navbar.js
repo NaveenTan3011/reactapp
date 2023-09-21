@@ -1,9 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { BsFillCartCheckFill } from "react-icons/bs";
+import { MdDarkMode } from "react-icons/md";
 
 const Navbar = ({count, }) => {
- 
+  const [mode, setMode] = useState('light');
+  const handleMode = ()=>{
+      if (mode=='light') {
+        setMode("dark")
+      } else {
+        setMode("light")
+      }
+  }
+  useEffect(() => {
+    if (mode === 'light') {
+      document.body.classList.add('light_mode');
+      document.body.classList.remove('dark_mode');
+    } else {
+      document.body.classList.add('dark_mode');
+      document.body.classList.remove('light_mode');
+    }
+  }, [mode]);
+  
 
   return (
     <>
@@ -22,6 +40,11 @@ const Navbar = ({count, }) => {
               <li>
                 <NavLink to="/Cart">
                   <BsFillCartCheckFill size="30px" color="white"/>{count}
+                </NavLink>
+              </li>
+              <li>
+                <NavLink onClick={handleMode}>{mode}
+                  <MdDarkMode size="20px" color="white"/>
                 </NavLink>
               </li>
             </ul>

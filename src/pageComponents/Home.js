@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Banner from '../components/Banner'
 import ProfileCard from '../components/ProfileCard'
 import Details from '../components/Details'
 import Layout from '../Layout'
-import { Button } from 'react-bootstrap'
-import ApiCall from '../apiComp/ApiCall'
+import NoteContext from '../context/NoteContext'
 
 
 const Home = () => {
-  
+
   return (
     <>
     <Layout >
