@@ -19,6 +19,9 @@ nav .container {
   color: #fff;
   font-size: 18px;
 }
+.active{
+  color: rgb(184, 2, 2) !important;
+}
 .logo a{
   color: #fff;
   font-size: 28px;
@@ -66,6 +69,7 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 55%;
 }
 
 .about_image img{

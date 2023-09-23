@@ -7,9 +7,13 @@ import {Routes, Route} from "react-router-dom"
 import "./CSS/style.css"
 import Contact from './pageComponents/Contact';
 import Cart from './components/Cart';
-import Shopping from './pageComponents/Shopping';
+import Shopping from './pageComponents/Shopping'
 
 const First = () => {
+  const [select, setSelect] = useState([]);
+
+
+
   return (
     <>
     <Routes>
@@ -17,8 +21,8 @@ const First = () => {
         <Route exact path="/About" element={<About/>} />
         <Route exact path="/Services" element={<Services/>} />
         <Route exact path="/:username" element={<Contact/>} />
-        <Route exact path="/Shopping" element={<Shopping/>} />
-        <Route exact path="/Cart" element={<Cart />} />
+        <Route exact path="/Shopping" element={<Shopping select={select} setSelect={setSelect}/>} />
+        <Route exact path="/Cart" element={<Cart selectedItems={select}/>} />
     </Routes>
     </>
   )

@@ -30,7 +30,7 @@ const   Text = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="container text-center mt-5">
         <h2>Write your post:</h2>
         <textarea
           id="demo"

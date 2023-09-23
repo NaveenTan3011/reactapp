@@ -3,6 +3,7 @@ import Banner from '../components/Banner'
 import ProfileCard from '../components/ProfileCard'
 import Details from '../components/Details'
 import  Layout  from '../Layout'
+import Text from '../components/Text'
 
 const Services = () => {
   return (
@@ -11,6 +12,7 @@ const Services = () => {
     <Banner heading="Services Page Heading"/>
     <ProfileCard/>
     <Details heading="Service Page Details Heading"/>
+    <Text/>
     </Layout>
    </>
   )

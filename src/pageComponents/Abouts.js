@@ -12,7 +12,6 @@ const Abouts = () => {
    <Layout>
    <AboutBanner/>
    <ProfileCard/>
-   <Text/>
    </Layout>
    </>
   )

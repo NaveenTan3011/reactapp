@@ -38,14 +38,14 @@ const Navbar = ({count, }) => {
               <li><NavLink to="/Contact">Contact us</NavLink></li>
               <li><NavLink to="/Shopping">Shopping </NavLink></li>
               <li>
-                <NavLink to="/Cart">
+                <Link to="/Cart">
                   <BsFillCartCheckFill size="30px" color="white"/>{count}
-                </NavLink>
+                </Link>
               </li>
               <li>
-                <NavLink onClick={handleMode}>{mode}
+                <Link onClick={handleMode}>{mode}
                   <MdDarkMode size="20px" color="white"/>
-                </NavLink>
+                </Link>
               </li>
             </ul>
           </div>
