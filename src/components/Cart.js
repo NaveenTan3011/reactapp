@@ -1,24 +1,25 @@
-import React from 'react'
+import React from "react";
+import { useState } from "react";
 
-const Cart = () => {
-
-
-  // Retrieve the data from localStorage
-  const storedData = localStorage.getItem("inputValue");
-
-  // Parse the JSON string back into an object
-  const selectedItemsInfo = JSON.parse(storedData);
-
-console.log("Retrieved Selected Items Info:", selectedItemsInfo);
-
+const CartPage = () => {
+  // Retrieve the product info from local storage
+  const [count, setCount] = useState(1)
+  const cartItems = JSON.parse(localStorage.getItem("products")) || [];
+  const handleAdd = (item) => {
+    const data = cartItems.filter((items) => items.pid === item.pid);
+    console.log(data);
+  }
   return (
     <div>
-      <h2>Selected Items</h2>
+      <h1>Cart</h1>
       <ul>
-        {selectedItemsInfo.map((item) => (
-          <li key={item.pid}>
-            <span>{item.title}</span>
-            <span>${item.price}</span>
+        {cartItems.map((item) => (
+          <li key={item.id} className="mb-3">
+            {item.title} &nbsp; ${item.price} &nbsp;
+            {count}
+            <button className="ms-3" onClick={() =>handleAdd(item)}>add Qty: 1</button>
+            <button className="ms-3">remove Qty: -1</button>
+            <button className="ms-3">remove items</button>
           </li>
         ))}
       </ul>
@@ -26,4 +27,4 @@ console.log("Retrieved Selected Items Info:", selectedItemsInfo);
   );
 };
 
-export default Cart;
+export default CartPage;

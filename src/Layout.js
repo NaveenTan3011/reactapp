@@ -1,10 +1,10 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 
-const Layout = ({ children, count}) => {
+const Layout = ({ children}) => {
   return (
     <div>
-      <Navbar count={count}  />
+      <Navbar  />
       {children}
     </div>
   );

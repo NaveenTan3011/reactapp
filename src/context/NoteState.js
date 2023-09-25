@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NoteContext from '../context/NoteContext'
 
 const NoteState = (props)=>{
+  const[ count, setCount] = useState(0);
     const [cartItems, setCartItems] = useState([]);
 
     const addItemToCart = (item) => {
@@ -17,8 +18,11 @@ const NoteState = (props)=>{
         setCartItems([...cartItems, { ...item, quantity: 1 }]);
       }
     };
+    const updateCount = (newCount) =>{
+      setCount(newCount);
+    }
     return(
-    <NoteContext.Provider value={{ cartItems, addItemToCart }}>
+    <NoteContext.Provider value={{ cartItems, addItemToCart, count, updateCount }}>
         {props.children}
     </NoteContext.Provider>
 )

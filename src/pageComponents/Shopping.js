@@ -4,10 +4,14 @@ import axios from "axios";
 import MainButton from "../components/MainButton";
 import { Container, Row, Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
+import { useContext } from 'react';
+import NoteContext from "../context/NoteContext";
+
 
 const Shopping = (props) => {
+  const{count, updateCount} = useContext(NoteContext);
+
   const [data, setData] = useState([]);
-  const [count, setCount] = useState(0);
 
   const handleClick = async () => {
     const result = await axios.get("https://fakestoreapi.com/products");
@@ -16,7 +20,9 @@ const Shopping = (props) => {
         setData(result.data);
       } else {
       }
-    } catch (error) {}
+    } catch (error) {
+      console.error("Error parsing JSON:", error);
+    }
   };
 
   useEffect(() => {
@@ -24,28 +30,44 @@ const Shopping = (props) => {
   }, []);
 
   const handleAdd = (item) => {
-    setCount(count + 1);
+    updateCount(count + 1);
     props.setSelect([...props.select, item]);
   };
 
   useEffect(() => {
-    if (props.select.length > 0) {
-      const selectedItemsInfo = props.select.map((item) => ({
-        pid: item.id,
-        title: item.title,
-        price: item.price,
-      }));
-      
-      // Stringify the selectedItemsInfo object before storing it
-      localStorage.setItem("inputValue", JSON.stringify(selectedItemsInfo));
-  
-      console.log("Selected Items Info:", selectedItemsInfo);
-    }
+if (props.select.length > 0) {
+  const selectedItemsInfo = props.select.map((item) => ({
+    qty: 1,
+    pid: item.id,
+    title: item.title,
+    price: item.price,
+  }));
+
+  // Get existing products from localStorage (if any)
+  let existingProducts = JSON.parse(localStorage.getItem('products')) || [];
+
+  // Check if the last selected item already exists in the existing products
+  const lastSelectedItem = selectedItemsInfo[selectedItemsInfo.length - 1];
+  const exists = existingProducts.some((existingItem) => existingItem.pid === lastSelectedItem.pid);
+
+  if (!exists) {
+    // Add the last selected item to the existing products
+    existingProducts.push(lastSelectedItem);
+
+    // Update the localStorage with the updated products
+    localStorage.setItem('products', JSON.stringify(existingProducts));
+  }
+}
+
   }, [props.select]);
+
+
+  
+  
   
 
   return (
-    <Layout count={count}>
+    <Layout >
       <Container>
         <Row className="mt-4">
           {data.map((item) => (

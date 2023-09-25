@@ -8,6 +8,7 @@ import "./CSS/style.css"
 import Contact from './pageComponents/Contact';
 import Cart from './components/Cart';
 import Shopping from './pageComponents/Shopping'
+import Storage from './pageComponents/Storage';
 
 const First = () => {
   const [select, setSelect] = useState([]);
@@ -23,6 +24,8 @@ const First = () => {
         <Route exact path="/:username" element={<Contact/>} />
         <Route exact path="/Shopping" element={<Shopping select={select} setSelect={setSelect}/>} />
         <Route exact path="/Cart" element={<Cart selectedItems={select}/>} />
+        <Route exact path="/Storage" element={<Storage/>} />
+
     </Routes>
     </>
   )
