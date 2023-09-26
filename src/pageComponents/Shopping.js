@@ -41,6 +41,7 @@ if (props.select.length > 0) {
     pid: item.id,
     title: item.title,
     price: item.price,
+    image: item.image,
   }));
 
   // Get existing products from localStorage (if any)

@@ -1,11 +1,25 @@
-import React from 'react'
+import React from 'react';
+import { connect } from 'react-redux';
+import { increment, decrement } from '../action creator/index';
 
-const Storage = () => {
+const Counter = ({ count, increment, decrement }) => {
   return (
     <div>
-      
+      <h1>Counter App</h1>
+      <p>Count: {count}</p>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
     </div>
-  )
-}
+  );
+};
 
-export default Storage
+const mapStateToProps = (state) => ({
+  count: state.count,
+});
+
+const mapDispatchToProps = {
+  increment,
+  decrement,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);

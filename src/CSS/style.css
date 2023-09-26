@@ -117,3 +117,27 @@ margin: 20px 0px;
   color: #000;
 }
 
+.cart-item-image{
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+.cart_item ul{
+  list-style: none;
+}
+
+.cart_item li{
+  background-color: #a7eeab;
+  width: 20rem;
+}
+
+.cart_upper{
+  display: flex;
+}
+
+.cart_image{
+  width: 100px;
+}
+.quantity{
+  display: flex;
+}
