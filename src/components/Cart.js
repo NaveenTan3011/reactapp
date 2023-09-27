@@ -68,7 +68,7 @@ const CartPage = () => {
           <h1>Cart</h1>
           <ul>
             {cartItems.map((item) => (
-              <li key={item.id} className="mb-3">
+              <li key={item.id} className="mb-3 d-flex align-items-center">
                 <div className="cart_upper">
                   <div className="cart_image">
                     <img
@@ -101,6 +101,7 @@ const CartPage = () => {
                     <MdDeleteForever />
                   </button>
                 </div>
+              <div>Total Price {}</div>
               </li>
             ))}
           </ul>

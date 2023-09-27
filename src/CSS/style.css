@@ -118,8 +118,8 @@ margin: 20px 0px;
 }
 
 .cart-item-image{
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
 }
 .cart_item ul{
@@ -127,17 +127,28 @@ margin: 20px 0px;
 }
 
 .cart_item li{
-  background-color: #a7eeab;
-  width: 20rem;
+  background-color: #555555;
+  width: 70rem;
 }
 
 .cart_upper{
   display: flex;
+  align-items: center;
 }
 
 .cart_image{
   width: 100px;
 }
 .quantity{
-  display: flex;
+  margin-left: 50px;
+}
+.login_form{
+  width: 300px;
+  background-color: antiquewhite;
+  margin: auto;
+  padding: 40px;
+}
+.login_form input{
+  margin-bottom: 20px;
+ 
 }

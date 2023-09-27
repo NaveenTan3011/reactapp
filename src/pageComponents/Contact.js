@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import Practice from "./Practice";
 import Layout from "../Layout";
 
+
 const Contact = () => {
   const { username } = useParams();
 
@@ -17,3 +18,6 @@ const Contact = () => {
 };
 
 export default Contact;
+
+
+
